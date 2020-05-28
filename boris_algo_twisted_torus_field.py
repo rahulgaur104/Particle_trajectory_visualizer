@@ -13,9 +13,8 @@ Used to trace path of charged particles by solving the equation of
 motion using a famous algorithm called the Boris algorithm in plasma
 physics.
 
-
 Note that this code uses mayavi package to create animations and 3D 
-graphics which only works with a specific set of settings. 
+graphics which only works with a specific system configuration. 
 
 Don't use python >3.6 with qt5 backend as it renders incorrect 
 visualization. For more information look up the issue #656 with 

@@ -14,11 +14,6 @@ import os
 import subprocess
 
 
-#from matplotlib import rc
-
-#rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-#rc('text', usetex=True)
-
 
 out_path = './'
 out_path = os.path.abspath(out_path)
@@ -26,8 +21,6 @@ fps = 20
 prefix = 'ani'
 ext = '.png'
 
-#m = 1.;
-#q = 1.;
 qdm = 1E6   # q/m for electrons for H+ ion q/m ~ 1E5
 c = 3E10;
 fraim = 50
@@ -44,9 +37,6 @@ X = np.zeros((duration,3))
 V = np.zeros((duration,3)) 
 
 for time in range(duration):
-    #t = charge / mass * B * 0.5 * dt;
-    #s = 2. * t / (1. + t*t);
-    #v_minus = v + charge / (mass * vAc) * E * 0.5 * dt;
     c1 = qdm*dt
     c2 = c1/c
     A_plus = np.eye(3) + c2*np.cross(np.eye(3), B)

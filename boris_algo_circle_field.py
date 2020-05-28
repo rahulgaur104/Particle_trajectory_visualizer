@@ -9,7 +9,7 @@ Based on the application of the Boris algorithm for straight magnetic and electr
 
 This code will have radially varying B field to show the effect of grad B drift.
 
-Since one doesn't need any derivatives of the fields while time integrating,
+Since one doesn't need any derivatives of the fields while time marching,
 using r, theta, phi(orthogonal) coordinates shouldn't be dificult at all.
 The only thing we need to ensure is that B is divergence-less.
 """
@@ -34,8 +34,6 @@ fps = 20
 prefix = 'ani'
 ext = '.png'
 
-#m = 1.;
-#q = 1.;
 qdm = 1E7   # q/m for electrons for H+ ion q/m ~ 1E5
 c = 3E10;
 fraim = 50
@@ -58,9 +56,6 @@ C = 5000
 
 
 for time in range(duration):
-    #t = charge / mass * B * 0.5 * dt;
-    #s = 2. * t / (1. + t*t);
-    #v_minus = v + charge / (mass * vAc) * E * 0.5 * dt;
     r = mx.sqrt(x[0]**2 + x[1]**2)
     th = mx.atan2(x[1], x[0])
     B = np.array([-C/r*mx.sin(th), C/r*mx.cos(th), 0]);
@@ -75,21 +70,8 @@ for time in range(duration):
     V[time,:] = v; 
     En[time] = np.linalg.norm(V[time,:])
 
-"""
-fig1 = plt.figure()
-ax = fig1.add_subplot(111, projection='3d')
 
-ax.plot(X[:,0],X[:,1],X[:,2],'k',linewidth=2.0); 
-ax.plot(810*np.cos(np.linspace(0, 2*np.pi, 100)), 810*np.sin(np.linspace(0, 2*np.pi, 100)) ,5*np.ones((100,)), 'b', linewidth=2.0)
-#ax.xlabel(r'$x/d_{\rm p}$',fontsize=16)
-#ax.ylabel(r'$y/d_{\rm p}$',fontsize=16)
-#ax.zlabel(r'$z/d_{\rm p}$',fontsize=16)
 
-fig2 = plt.figure()
-plt.plot(np.linspace(0, duration, duration), En)
-
-plt.show()
-"""
 
 
 padding = len(str(len(X[:,0])))
