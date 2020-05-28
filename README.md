@@ -25,6 +25,7 @@ Note that this configuration may not be unique for the code to work properly.[So
 ## Physics
 
 The code uses the famous Boris algorithm to solve the following equations of motion:
+
 [!Equation] <a href="https://www.codecogs.com/eqnedit.php?latex=\begin{gathered}&space;\frac{d&space;\textbf{v}}{dt}&space;=&space;q(\textbf{E}&space;&plus;&space;\textbf{v}&space;\times&space;\textbf{B})\\&space;\frac{d&space;\textbf{r}}{dt}&space;=&space;\textbf{v}&space;\end{gathered}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{gathered}&space;\frac{d&space;\textbf{v}}{dt}&space;=&space;q(\textbf{E}&space;&plus;&space;\textbf{v}&space;\times&space;\textbf{B})\\&space;\frac{d&space;\textbf{r}}{dt}&space;=&space;\textbf{v}&space;\end{gathered}" title="\begin{gathered} \frac{d \textbf{v}}{dt} = q(\textbf{E} + \textbf{v} \times \textbf{B})\\ \frac{d \textbf{r}}{dt} = \textbf{v} \end{gathered}" /></a> 
 
 The template and explanatory text are in [README-template.md](README-template.md)
