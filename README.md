@@ -37,7 +37,7 @@ conserving the phase space volume of the distriution function(without an electri
 * Add provision for the user to add an arbitrary 3D magnetic and electric field topology using a data file(.nc, .hd5) Status: Not started
 * Transform the structure of the code to an object-oriented one. Status: Not started
 
-Collaboration with this endaevour is higly-encouraged. Don't hesitate to contact me regarding any further information on this code.
+Don't hesitate to contact me regarding any further information on this code.
 
 
 
