@@ -10,8 +10,7 @@ of nested circular tori.
 Provision for adding the electric field.
 
 Used to trace path of charged particles by solving the equation of 
-motion using a famous algorithm called the Boris algorithm in plasma
-physics.
+motion using a famous Boris algorithm.
 
 Note that this code uses mayavi package to create animations and 3D 
 graphics which only works with a specific system configuration. 
