@@ -102,7 +102,7 @@ for time in range(duration):
     S = np.linalg.inv(A_plus)
     R = np.dot(S, A_minus)
     v = np.dot(v, R.T) + c1*np.dot(S, E)
-    x = x + dt*np.dot(v, R.T) +c1*dt*np.dot(S, E)     
+    x = x + dt*v
     
     X[time,:] = x;
     V[time,:] = v; 
@@ -175,7 +175,7 @@ def updateAnimation():
         filename = os.path.join(out_path, '{}_{}{}{}'.format(prefix, zeros, i, ext))
 
         mlab.savefig(filename=filename)
-        yield
+        #yield
         
     scene.disable_render = False
   
