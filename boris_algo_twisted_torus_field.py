@@ -91,7 +91,7 @@ for time in range(duration):
     fac1 = -r/(nu*R)
     
     # Poloidal current
-    I = A*r
+    I = A*R
     
     #Magnetic field vector in cartesian coords
     B = I/R*np.array([fac1*sth*cphi - sphi, fac1*sth*sphi + cphi, -fac1*cth])
