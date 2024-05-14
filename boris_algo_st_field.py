@@ -3,7 +3,6 @@
 """
 Created on Sat Apr 18 23:03:34 2020
 
-
 """
 
 import numpy as np
@@ -48,17 +47,17 @@ for time in range(duration):
     X[time,:] = x;
     V[time,:] = v; 
 
-"""
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
 
-ax.plot(X[:,0],X[:,1],X[:,2],'k',linewidth=2.0); 
-#ax.xlabel(r'$x/d_{\rm p}$',fontsize=16)
-#ax.ylabel(r'$y/d_{\rm p}$',fontsize=16)
-#ax.zlabel(r'$z/d_{\rm p}$',fontsize=16)
-plt.show()
-"""
-"""
+
+#fig = plt.figure()
+#ax = fig.add_subplot(111, projection='3d')
+#
+#ax.plot(X[:,0],X[:,1],X[:,2],'k',linewidth=2.0); 
+##ax.xlabel(r'$x/d_{\rm p}$',fontsize=16)
+##ax.ylabel(r'$y/d_{\rm p}$',fontsize=16)
+##ax.zlabel(r'$z/d_{\rm p}$',fontsize=16)
+#plt.show()
+
 padding = len(str(len(X[:,0])))
 
 p = mlab.plot3d(X[:,0], X[:,1], X[:,2], color = (0, 1, 0), line_width = 5, tube_radius = 10, opacity=1.0)
@@ -68,9 +67,9 @@ l = mlab.points3d(X[:,0], X[:,1], X[:,2], color = (1, 0, 0), scale_factor=100, o
 #                      np.array([0, 0]), np.array([0, np.max(X[:,2])]), line_width = 2, mode='arrow', scale_factor = 1)
 #n = 
 k = mlab.quiver3d(np.array([ np.max(X[:,0])/2, np.max(X[:,0])/2]), np.array([0, 0]), \
-              np.array([0, np.max(X[:,2])]), np.array([0, 0]), \
+              np.array([0, 2*np.max(X[:,2])]), np.array([0, 0]), \
                   np.array([0, 0]), np.array([0, 1]),  mode='cone', scale_factor = 200, opacity=1.0)
-q = mlab.plot3d(np.ones((10,))*np.max(X[:,0])/2, np.zeros((10,)), np.linspace(0, np.max(X[:,2]),10), color = (1, 0, 0), line_width = 5, tube_radius = 10)
+q = mlab.plot3d(np.ones((10,))*np.max(X[:,0])/2, np.zeros((10,)), np.linspace(0, 2*np.max(X[:,2]),10), color = (1, 0, 0), line_width = 5, tube_radius = 10)
 #p.actor.property.frontface_culling = True
 #l.actor.property.frontface_culling = True
 #k.actor.property.frontface_culling = True
@@ -127,10 +126,8 @@ subprocess.check_output(['bash','-c', cmd])
 
 # Remove temp image files with extension
 [os.remove(f) for f in os.listdir(out_path) if f.endswith(ext)]
-"""
 
 
-"""
 def display_animation(anim):
     plt.close(anim._fig)
     return HTML(anim_to_html(anim))
@@ -157,4 +154,3 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
 
 # call our new function to display the animation
 display_animation(anim)
-"""

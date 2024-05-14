@@ -48,7 +48,7 @@ r = 50      # radius of the circular tangent surface from
             # the magnetic axis
 
 duration = 8000  # number of steps
-dt = 150         # time step. There is probably an upper limit?
+dt = 600         # time step. There is probably an upper limit?
 
 nu = 1           # the local safety factor also = q for large eps
 
@@ -92,6 +92,7 @@ for time in range(duration):
     
     # Poloidal current
     I = A*R
+    #I = A
     
     #Magnetic field vector in cartesian coords
     B = I/R*np.array([fac1*sth*cphi - sphi, fac1*sth*sphi + cphi, -fac1*cth])
@@ -110,7 +111,7 @@ for time in range(duration):
    
 padding = len(str(len(X[:,0])))
 p = mlab.plot3d(X[:,0], X[:,1], X[:,2], color = (0, 1, 0), line_width = 0.5, tube_radius = 1.5, opacity=1.0)
-l = mlab.points3d(X[:,0], X[:,1], X[:,2], color = (1, 0, 0), scale_factor=3, opacity=1.0)
+l = mlab.points3d(X[:,0], X[:,1], X[:,2], color = (1, 0, 0), scale_factor=10, opacity=1.0)
 
 
 # Torus and geodesic potting routine
@@ -151,7 +152,7 @@ ms2 = k.mlab_source
 
 
 
-@mlab.animate(delay = 10)
+@mlab.animate(delay = 50)
 def updateAnimation():
     fig = mlab.gcf()
     scene = fig.scene

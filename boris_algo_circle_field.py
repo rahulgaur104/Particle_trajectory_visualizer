@@ -38,7 +38,7 @@ qdm = 1E7   # q/m for electrons for H+ ion q/m ~ 1E5
 c = 3E10;
 fraim = 50
 duration = 1250;
-dt = 6E1
+dt = 1.5E2
 
 #v = np.array([6E-3, 9E-3, 8E-4]);
 v = np.array([-3E-2, 7E-2, -3E-2])
@@ -76,8 +76,8 @@ for time in range(duration):
 
 padding = len(str(len(X[:,0])))
 
-p = mlab.plot3d(X[:,0], X[:,1], X[:,2], color = (0, 1, 0), line_width = 2, tube_radius = 4, opacity=1.0)
-l = mlab.points3d(X[:,0], X[:,1], X[:,2], color = (1, 0, 0), scale_factor=9, opacity=1.0)
+p = mlab.plot3d(X[:,0], X[:,1], X[:,2], color = (0, 1, 0), line_width = 2, tube_radius = 8, opacity=1.0)
+l = mlab.points3d(X[:,0], X[:,1], X[:,2], color = (1, 0, 0), scale_factor=20, opacity=1.0)
 #k = mlab.quiver3d(np.array([ np.max(X[:,0])/2, np.max(X[:,0])/2]), np.array([0, 0]), \
 #                  np.array([0, -np.max(X[:,2])]), np.array([0, 0]), \
 #                      np.array([0, 0]), np.array([0, np.max(X[:,2])]), line_width = 2, mode='arrow', scale_factor = 1)
@@ -143,7 +143,6 @@ updateAnimation()
 #[os.remove(f) for f in os.listdir(out_path) if f.endswith(ext)]
 
 
-"""
 def display_animation(anim):
     plt.close(anim._fig)
     return HTML(anim_to_html(anim))
@@ -170,4 +169,3 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
 
 # call our new function to display the animation
 display_animation(anim)
-"""
